@@ -1,5 +1,16 @@
 import numpy as np
 
+def label_counter(x):
+  count_labels = {}
+  print('inside label counter x shape = ',x.shape)
+  for pt in x:
+    if pt in count_labels:
+      count_labels[pt] += 1
+    else:
+      count_labels[pt] = 1
+  return count_labels
+
+
 def calculate_entropy(x):
   count_labels = label_counter(x)
   ent = 0
